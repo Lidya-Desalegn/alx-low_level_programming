@@ -1,16 +1,26 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * _isdigit - Check if a character is a digit
- * @x: The number to be checked
- * Return: 1 for a character that will be a digit or 0 for any else
+ * print_numebr - prints int with putchar
+ * @n :takes number, hello
+ *
+ * Return: void
  */
-int _isdigit(int x)
 
+void print_number(int n)
 {
-	if (x >= 48 && x <= 57)
+	unsigned int m;
+
+	if (n < 0)
 	{
-		return (1);
+		_putchar('_');
+		m = -n;
 	}
-	return (0);
+	else
+	{
+		m = n;
+	}
+	if (m /10 != 0)
+		print_number(m / 10);
+	_putchar((m % 10) + '0');
 }
